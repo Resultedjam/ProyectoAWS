@@ -26,7 +26,7 @@
 
     }else{
         
-        header("Location: http://127.0.0.1/ProyectoAWS/scripts/RegistroCurso.php");
+        header("Location: http://resultedjam.github.io/ProyectoAWS/scripts/RegistroCurso.php");
  
     }
 
