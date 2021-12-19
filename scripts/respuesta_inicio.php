@@ -25,12 +25,11 @@
     //Borrador de la funcion validar inicio de sesion
     if(validacion($varCorreo,$varContraseña)){
         //Manda a principal
-        header("Location: http://127.0.0.1/ProyectoAWS/Paginas/Principal.html");
+        header("Location: http://resultedjam.github.io/ProyectoAWS/Paginas/Principal.html");
     }else{
         //Me regresa al index de inicio de sesion.
-        header("Location: http://127.0.0.1/ProyectoAWS/index.html");
+        header("Location: http://resultedjam.github.io/ProyectoAWS/index.html");
     }
-
     
     ?> 
        
