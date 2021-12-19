@@ -52,14 +52,14 @@
 		
 		if ($stmt->execute()){
             $mysqli->insert_id;
-			return header("Location: http://127.0.0.1/ProyectoAWS/index.html");
+			return header("Location: http://resultedjam.github.io/ProyectoAWS/index.html");
 			} else {
 			return 0;
 		}
 
     }else{
 
-        header("Location: http://127.0.0.1/ProyectoAWS/scripts/Form_Registro_Pagina.php");
+        header("Location: http://resultedjam.github.io/ProyectoAWS/scripts/Form_Registro_Pagina.php");
 
     }
 
