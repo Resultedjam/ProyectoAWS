@@ -63,7 +63,7 @@ require'conexion.php';
         if ($stmt->execute()){
             echo 'llego aquí';
             $mysqli->insert_id;
-            return header("Location: http://127.0.0.1/ProyectoAWS/Paginas/Principal.html");
+            return header("Location: http://resultedjam.github.io/ProyectoAWS/Paginas/Principal.html");
         } else {
             return "no se pudo registrar cursos";
         }
