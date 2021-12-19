@@ -1,0 +1,168 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Libre Franklin', sans-serif;
+    background: linear-gradient(to right, hsla(0, 89%, 60%, 0.5), hsla(175, 92%, 47%, 0.452));
+}
+
+.contenedor{
+    padding: 60px 0;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.titulo{
+    color: rgb(2, 109, 68);
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+/* Header */
+
+header{
+    width: 100%;
+    height: 600px;
+    background: linear-gradient(to right,  hsla(0, 89%, 60%, 0.452), hsla(175, 92%, 47%, 0.329)),url(../Imagenes/portada.jpg); 
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+nav{
+    text-align: right;
+    padding: 30px 50px 0 0;
+}
+nav>a{
+    color: #ffff;
+    font-weight: 300;
+    text-decoration: none;
+    margin-right: 10px;
+}
+nav > a:hover{
+    text-decoration: underline;
+}
+header .textos-header{
+    display: flex;
+    height: 430px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align:center;
+}
+
+.textos-header h1{
+    font-size: 50px;
+    color: rgb(255, 255, 255);
+}
+.textos-header h2{
+    font-size: 30px;
+    font-weight: 300;
+    color: rgb(255, 255, 255);
+}
+
+.wave{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* About us */
+.contenedor-sobre-nosotros{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.sobre-nosotros .contenido-textos{
+    width: 48%;
+}
+.contenido-textos h3{
+   margin-bottom: 15px;
+}
+
+.contenido-textos h3 span{
+     background: #16A085;
+    color: #ffff;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    padding: 2px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+    margin-right: 5px;
+ } 
+
+ .contenido-textos p{
+     padding: 0px 0px 30px 15px;
+     font-weight: 300;
+     text-align: justify;
+ }
+ aside{
+    float: right;
+    padding-left: 5px;
+}
+#libroHis{
+    width: 150px;
+    height: 150px;
+}
+#Merchant{
+    width: 100px;
+    height: 150px;
+}
+#SQS{
+    width: 150px;
+    height: 150px;
+}
+#sqs{
+    float: left;
+}
+
+/* footer*/
+
+footer{ 
+    background:url(../Imagenes/footer.gif);
+    padding: 40px 0 30px 0;
+    background-size:contain;
+    background-attachment: fixed;
+    background-position-x:0px;
+    background-position-y: -90px;
+}
+
+.contenedor-footer{
+    display: flex;
+    width: 90%;
+    justify-content: space-evenly;
+    margin: auto;
+    padding-bottom: 50px;
+    border-bottom: 1px solid #ccc;
+}
+
+.content-foo{
+    text-align: center;
+}
+
+.content-foo h4{
+    color: #099ca1;
+    border-bottom: 3px solid #16A085;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+.content-foo p{
+    color: #0ac1c7;
+}
+
+.titulo-final{
+    text-align: center;
+    font-size: 24px;
+    margin:  20px ;
+    color: #07cfcf;
+}

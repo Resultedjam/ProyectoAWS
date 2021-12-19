@@ -1,0 +1,33 @@
+Nombre(s): Carlito
+Apellidos: Bodoque y Vodoque
+Correo: pain.swordartonline@gmail.com
+Contraseña: calamardo
+Fecha de nacimiento: 2001-07-18
+Edad: 20
+Sexo: Hombre
+Telefono: 5572402912
+Telefono de Referencia: 5543434343
+Ocupacion: Estudiante
+Numero de Pais: 139
+Nombre(s): David Daniel
+Apellidos: Torres Santana
+Correo: andresh35@outlook.com
+Contraseña: asasa
+Fecha de nacimiento: 2002-05-24
+Edad: 19
+Sexo: Hombre
+Telefono: 4687945646
+Telefono de Referencia: 123456789
+Ocupacion: Estudiante
+Numero de Pais: 18
+Nombre(s): David Daniel
+Apellidos: Torres Santana
+Correo: andresh35@outlook.com
+Contraseña: asasdsadas
+Fecha de nacimiento: 2000-01-20
+Edad: 21
+Sexo: Hombre
+Telefono: 2134684561
+Telefono de Referencia: 123456789
+Ocupacion: Estudiante
+Numero de Pais: 17
