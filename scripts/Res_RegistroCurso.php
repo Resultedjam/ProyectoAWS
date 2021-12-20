@@ -2,11 +2,8 @@
 <html lang="es">
 <head>
     <?php
-
-    require'conexion.php';
-
-    $varCurso = $mysqli->real_escape_string($_POST['CursoOServicio']); 
-    $varNombreUsr = $mysqli->real_escape_string($_POST['nombreUsr']);
+    $varCurso = $_POST['CursoyServicio']; 
+    $varNombreUsr=$_POST['nombreUsr'];
 
     include("./funciones.php");
     ?>
@@ -20,14 +17,20 @@
 
     
 
-    if(!estaVacio($varCurso) || !estaVacio($varNombreUsr)){
- 
-        usuarioExiste($varNombreUsr, $varCurso);
-
-    }else{
-        
+    if(estaVacio($varCurso) || estaVacio($varNombreUsr)){
+        //Nos retiene en la pagina por error en el formulario
         header("Location: http://resultedjam.github.io/ProyectoAWS/scripts/RegistroCurso.php");
- 
+    }else{
+        $archivo = fopen("datos_curso.txt","a+") or die("Error en el archivo");
+        // Escribir en el archivo:
+         fwrite($archivo, "Nombre de Usuario: " .$varNombreUsr ."\n");
+         fwrite($archivo, "Curso o Servicio: " .$varCurso ."\n");
+        // Fuerza a que se escriban los datos pendientes en el buffer:
+       fflush($archivo);
+        // Cerrar el archivo:
+        fclose($archivo);
+            //Me regresa al index de Pirncipal.
+        header("Location: http://resultedjam.github.io/ProyectoAWS/Paginas/Principal.html");
     }
 
     ?>   

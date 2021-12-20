@@ -1,22 +1,21 @@
-<?php
-    require'conexion.php';
-?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <?php
     
-    $varNombreUsuario = $mysqli->real_escape_string($_POST['nombreUsuario']);
-    $varApellidos = $mysqli->real_escape_string($_POST['apellidos']);
-    $varCorreo = $mysqli->real_escape_string($_POST['email']);
-    $varContraseña = $mysqli->real_escape_string($_POST['passUser']);
-    $varFechaNacimiento = $mysqli->real_escape_string($_POST['FechaNacimiento']);
-    $varSexo = $mysqli->real_escape_string($_POST['sexo']);
-    $varNumero = $mysqli->real_escape_string($_POST['numero']);
-    $varNumeroRef = $mysqli->real_escape_string($_POST['numeroref']);
-    $varOcupacion = $mysqli->real_escape_string($_POST['ocupacion']);
-    $varPais = $mysqli->real_escape_string($_POST['Pais']);
-    $varNomUsr = $mysqli->real_escape_string($_POST['nombreUsr']);
+    
+     
+    $varNombreUsuario = $_POST['nombreUsuario']; 
+    $varApellidos = $_POST['apellidos']; 
+    $varCorreo = $_POST['email']; 
+    $varContraseña=$_POST['passUser'];
+    $varFechaNacimiento = $_POST['FechaNacimiento'];
+    $varSexo = $_POST['sexo'];
+    $varNumero = $_POST['numero'];
+    $varNumeroRef = $_POST['numeroref'];
+    $varOcupacion = $_POST['ocupacion'];
+    $varPais = $_POST['Pais'];
+    $varNomUsr = $_POST['nombreUsr'];
 
     include("./funciones.php");
         
@@ -41,28 +40,37 @@
     estaVacio($varNomUsr);
 
 
+    
+    
+
     if(validacion2($varNombreUsuario,$varApellidos,$varCorreo,$varContraseña,
-    $varFechaNacimiento,$varSexo,$varNumero,$varNumeroRef,$varOcupacion,$varPais,$varNomUsr)){
-        
-        //agregado para bd
-        global $mysqli;
-		
-		$stmt = $mysqli->prepare("INSERT INTO usuarios (Nombre, Apellidos, Usuario, CorreoElectronico, Contrasena, Nacimiento, Sexo, Telefono, CelReferencia, Ocupacion, Pais) VALUES(?,?,?,?,?,?,?,?,?,?,?)");
-		$stmt->bind_param('sssssssiiss', $varNombreUsuario, $varApellidos, $varNomUsr, $varCorreo, $varContraseña, $varFechaNacimiento, $varSexo, $varNumero, $varNumeroRef, $varOcupacion, $varPais);
-		
-		if ($stmt->execute()){
-            $mysqli->insert_id;
-			return header("Location: http://resultedjam.github.io/ProyectoAWS/index.html");
-			} else {
-			return 0;
-		}
+    $varFechaNacimiento,$varSexo,$varNumero,$varNumeroRef,$varOcupacion,$varPais)){
+        //Me regresa al index de inicio de sesion.
+        $archivo = fopen("datos_usuario.txt","a+") or die("Error en el archivo");
 
+        // Escribir en el archivo:
+         fwrite($archivo, "Nombre(s): " .$varNombreUsuario ."\n");
+         fwrite($archivo, "Apellidos: " . $varApellidos ."\n") ;
+         fwrite($archivo, "Correo: " . $varCorreo ."\n");
+         fwrite($archivo, "Contraseña: " . $varContraseña ."\n");
+         fwrite($archivo, "Fecha de nacimiento: ".$varFechaNacimiento ."\n");
+         fwrite($archivo, "Edad: " .obtener_edad($varFechaNacimiento) ."\n");
+         fwrite($archivo, "Sexo: " .$varSexo ."\n");
+         fwrite($archivo, "Telefono: " .$varNumero ."\n");
+         fwrite($archivo, "Telefono de Referencia: " .$varNumeroRef ."\n");
+         fwrite($archivo, "Ocupacion: " .$varOcupacion ."\n");
+         fwrite($archivo, "Numero de Pais: " . $varPais ."\n");
+         fwrite($archivo, "Nombre de Usuario: " . $varNomUsr ."\n");
+        // Fuerza a que se escriban los datos pendientes en el buffer:
+         fflush($archivo);
+    // Cerrar el archivo:
+    fclose($archivo);
+    
+        header("Location: http://resultedjam.github.io/ProyectoAWS/index.html");
     }else{
-
+        //Nos retiene en la pagina por error en el formulario
         header("Location: http://resultedjam.github.io/ProyectoAWS/scripts/Form_Registro_Pagina.php");
-
     }
-
 
     ?>   
 

@@ -2,11 +2,10 @@
 <html lang="es">
 <head>
     <?php
+    
 
-    require'conexion.php';
-
-    $varCorreo = $mysqli->real_escape_string($_POST['email']); 
-    $varContraseña = $mysqli->real_escape_string($_POST['passUser']);
+    $varCorreo = $_POST['email']; 
+    $varContraseña=$_POST['passUser'];
 
     include("../scripts/funciones.php");
         
@@ -30,6 +29,7 @@
         //Me regresa al index de inicio de sesion.
         header("Location: http://resultedjam.github.io/ProyectoAWS/index.html");
     }
+
     
     ?> 
        
